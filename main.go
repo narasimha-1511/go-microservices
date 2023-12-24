@@ -1,0 +1,26 @@
+package main
+
+import (
+	"fmt"
+	"net/http"
+)
+func main(){	
+	// TODO: Implement
+	fmt.Println("Orders API");
+
+	server := &http.Server{
+		Addr: ":3000",
+		Handler: http.HandlerFunc(basicHandler),
+	}
+
+	err:= server.ListenAndServe()
+	if err != nil {
+		fmt.Println("Failed to listen tot he server",err)
+	}
+
+}
+
+func basicHandler(w http.ResponseWriter, r *http.Request) {
+	// fmt.Fprintf(w, "Hello World")
+	w.Write([]byte("Hello World"))
+}	
