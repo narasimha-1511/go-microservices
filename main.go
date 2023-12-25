@@ -14,7 +14,7 @@ import (
 
 func main(){	
 	// TODO: Implement
-	app:= appilication.New();
+	app:= appilication.New(appilication.LoadConfig());
 
 	ctx ,cancel := signal.NotifyContext(context.Background(), os.Interrupt);
 
